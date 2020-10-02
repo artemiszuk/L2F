@@ -12,10 +12,9 @@ ENV TZ=Asia/Kolkata
 
 
 RUN apt -qq install -y git aria2 wget curl busybox unzip unrar tar python3 ffmpeg python3-pip
-RUN wget https://rclone.org/install.sh
-RUN bash install.sh
+
 
 COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 COPY . .
-CMD ["bash","start.sh"]
+
